@@ -64,4 +64,5 @@ In programming we deal with procedures and data.
 * [SICP Book in HTML](https://mitpress.mit.edu/sicp/full-text/book/book-Z-H-4.html#%_toc_start)
 * [MIT Scheme User Manual](https://www.gnu.org/software/mit-scheme/documentation/mit-scheme-user.pdf)
 * [Why SICP Matters](https://people.eecs.berkeley.edu/~bh/sicp.html)
+* [SICP Solutions](http://community.schemewiki.org/?SICP-Solutions)
 * [SICP Solutions in Clojure](https://github.com/gregsexton/SICP-Clojure)

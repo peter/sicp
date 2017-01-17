@@ -105,3 +105,32 @@
 (square-root 9) ; => 3.00009155413138
 (square-root 1000000) ; => 1000.0000000000118
 (square-root 0.001) ; => 0.06772532736082602
+
+
+; 1.46
+
+(define (iterative-improve improve good-enough?)
+  (lambda (guess)
+    (let ((improved-guess (improve guess)))
+      (if (good-enough? guess improved-guess)
+        guess
+        ((iterative-improve improve good-enough?) improved-guess)))))
+
+(define (good-enough? prev-guess guess)
+  (define tolerance 1.e-6)
+  (< (/ (abs (- prev-guess guess)) guess)
+     tolerance))
+
+(define (average a b)
+  (/ (+ a b) 2.0))
+
+(define (improve guess x)
+  (average guess (/ x guess)))
+
+(define (square-root x)
+  ((iterative-improve
+    (lambda (y)
+      (/ (+ y (/ x y)) 2))
+    good-enough?) 1.0))
+
+(square-root 9) ; => 3.000000001396984
