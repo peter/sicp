@@ -59,6 +59,8 @@ In programming we deal with procedures and data.
 (square-root 9) ; => 3.00009155413138
 ```
 
+## 1.2 Procedures and the Processes They Generate
+
 ### 1.2.1 Linear Recursion and Iteration
 
 * Linear recursive processes are linear in time and space
@@ -141,6 +143,27 @@ GCD(a, b) = GCD(b, r)
 (gcd 40 206) ; => 2
 ```
 
+## 1.3 Formulating Abstractions with Higher Order Procedures
+
+Summing integers between a and b:
+
+```scheme
+(define (sum-integers a b)
+  (if (> a b)
+    0
+    (+ a (sum-integers (+ a 1) b))))
+(sum-integers 1 5) ; => 15
+```
+
+Generalized sum between a and b:
+
+```scheme
+(define (sum term next a b)
+  (if (> a b)
+    0
+    (+ (term a) (sum term next (next a) b))))
+(sum (lambda (x) x) 1+ 1 5) ; => 15
+```
 
 ## Resources
 
