@@ -92,6 +92,26 @@ Iterative factorial:
 (factorial-iter 5) ; => 120
 ```
 
+Recursive addition:
+
+```scheme
+(define (add a b)
+  (if (= a 0)
+    b
+    (+ 1 (add (- a 1) b))))
+(add 3 5) ; => 8
+```
+
+Iterative addition:
+
+```scheme
+(define (add a b)
+  (if (= a 0)
+    b
+    (add (- a 1) (+ b 1))))
+(add 3 5) ; => 8
+```
+
 ### 1.2.2 Tree Recursion
 
 Tree recursive fibonacci implementation:
